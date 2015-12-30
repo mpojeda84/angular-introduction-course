@@ -1,10 +1,11 @@
 'use strict';
 
-console.log("Initializing Main Module ...");
+angular.module('myApp', [])
 
-// Declare app level module
-angular.module('myApp', []).
+.controller('appCtrl', ['$scope', function($scope) {
 
-    config(['$routeProvider', function($routeProvider) {
+    $scope.hello = "Hello!!";
 
-    }]);
+}]);
+
+
