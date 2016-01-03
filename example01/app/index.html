@@ -2,21 +2,101 @@
   <head>
       <title>My AngularJS App</title>
 
-      <!--App CSS files-->
-      <link rel="stylesheet" href="app.css">
-
-      <!--Angular and other dependencies-->
+      <!--CSS and JS Dependencies-->
       <script src="../bower_components/angular/angular.js"></script>
 
       <!--App JS files-->
       <script src="app.js"></script>
 
+      <!--App CSS files-->
+      <link rel="stylesheet" href="app.css">
+
   </head>
   <body>
     <div ng-controller="appCtrl">
-        Example 1: <br/>
-        {{hello}}
-        <br/>
+
+        Example 1:
+        <div class="example-box">
+
+            {{helloMessage}}
+
+        </div>
+
+        Example 2:
+        <div class="example-box">
+
+            <span ng-bind="helloMessage"></span> using ng-bind
+
+        </div>
+
+        Example 3:
+        <div class="example-box">
+
+            Enter a name:
+            <input type="text" ng-model="name"><br/>
+            Hello <span ng-bind="name"></span>
+
+        </div>
+
+        Example 4:
+        <div class="example-box">
+
+            Select a name:
+            <select ng-model="nameSelected" <!--multiple--> >
+                <option value="Maikel Pereira">Maikel</option>
+                <option value="Alejandro Morales">Alejandro</option>
+            </select>
+
+            Hello <span ng-bind="nameSelected"></span>
+
+        </div>
+
+        Example 5:
+        <div class="example-box">
+
+            <div ng-class="{'blue-class': blue == true}">This is just a text</div>
+            make it blue: <input type="checkbox" ng-model="blue">
+
+        </div>
+
+        Example 6:
+        <div class="example-box">
+
+            show more: <input type="checkbox" ng-model="showMore">
+
+            <div ng-show="showMore">This is more information ... just hidden</div>
+            <div ng-if="showMore">This is more information ... removed from DOM</div>
+
+        </div>
+
+
+        Example 7:
+        <div class="example-box">
+
+            <div style="margin-bottom: 5px"> Presenting as Currency: <input type="input" ng-model="ammount"> >>> {{ammount | currency}} </div>
+
+            <div> Presenting as Uppercase: <input type="input" ng-model="string"> >>> {{string | uppercase}} </div>
+
+        </div>
+
+        Example 8:
+        <div class="example-box">
+
+            <input type="button" ng-click="makeOlder()" value="Make Older">
+
+            {{passenger | json}}
+
+
+        </div>
+
+        Example 9:
+        <div class="example-box" ng-init="names=['Maikel', 'Alejando', 'Tia']">
+
+            <div style="margin-bottom: 5px"> Displaying the Array {{names | json}} </div>
+
+            <div style="border: red 1px dotted" ng-repeat="n in names"> {{n}}</div>
+
+        </div>
 
 
     </div>
